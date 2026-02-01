@@ -4,15 +4,6 @@ import json
 import os
 from datetime import datetime
 
-# ===== 使用期限（ユーザー向け）=====
-EXPIRE_DATE = datetime.date(2026, 2, 10)
-if datetime.date.today() > EXPIRE_DATE:
-    st.error("🛑 アプリ使用期限終了（2026/2/10）")
-    st.stop()
-
-st.sidebar.info("⏰ **有効期限**: {}まで".format(EXPIRE_DATE))  # format必須
-# =================================
-
 # ===== エンドポイント =====
 ENDPOINT = os.getenv("AZURE_OPENAI_ENDPOINT")  # Target URI
 API_KEY = os.getenv("AZURE_OPENAI_API_KEY")  # APIキー
@@ -105,6 +96,7 @@ if st.button("🥘 この食材でレシピを生成！", use_container_width=Tr
         save_history(history)
          
         
+
 
 
 
