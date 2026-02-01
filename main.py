@@ -4,7 +4,10 @@ import json
 import os
 from datetime import datetime
 
-
+# ===== 使用期限（ユーザー向け）=====
+EXPIRE_DATE = datetime.date(2026, 2, 10)
+st.sidebar.info(f"⏰ **有効期限**: {EXPIRE_DATE}まで")
+# =================================
 
 # ===== エンドポイント =====
 ENDPOINT = os.getenv("AZURE_OPENAI_ENDPOINT")  # Target URI
@@ -98,3 +101,4 @@ if st.button("🥘 この食材でレシピを生成！", use_container_width=Tr
         save_history(history)
          
         
+
